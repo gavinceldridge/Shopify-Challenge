@@ -2,11 +2,11 @@ import "./App.css";
 import React, { useEffect, useState } from "react";
 import { Configuration, OpenAIApi } from "openai";
 
+import useLocalStorage from "./useLocalStorage";
 import AiForm from "./AiForm";
 import Responses from "./Responses";
 
 function App() {
-	// console.log(process.env.REACT_APP_OPEN_AI_SK);
 
 	const configuration = new Configuration({
 		organization: process.env.REACT_APP_OPEN_AI_ORG,
@@ -14,7 +14,7 @@ function App() {
 	});
 
 	const [input, setInput] = useState("");
-	const [questionsAndAnswers, setQuestionsAndAnswers] = useState([]);
+	const [questionsAndAnswers, setQuestionsAndAnswers] = useLocalStorage("previousEntries", []);
 
 	const askAi = async (length) => {
     const openai = new OpenAIApi(configuration);
@@ -54,7 +54,7 @@ function App() {
 				setInput={setInput}
 				handleSubmit={handleSubmit}
 			/>
-			<Responses questionsAndAnswers={questionsAndAnswers} />
+			<Responses questionsAndAnswers={questionsAndAnswers} setQuestionsAndAnswers={setQuestionsAndAnswers} />
 		</div>
 	);
 }

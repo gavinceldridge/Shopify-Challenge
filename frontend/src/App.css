@@ -118,3 +118,27 @@ th {
 	text-align: center;
 }
 
+.delete {
+	width: 10%;
+	text-align: center;
+}
+
+.delete-btn {
+	color: white;
+	background-color: red;
+	border: none;
+	padding: .5rem;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+}
+
+.delete-btn:hover {
+	background-color: rgb(141, 18, 18);
+}
+
+@media screen and (max-width: 600px) {
+	.delete-btn {
+		padding: .5rem;
+	}
+	
+}
