@@ -1,38 +1,120 @@
+body {
+	background-color: black;
+	color: white;
+}
+
 .App {
-  text-align: center;
+	text-align: center;
+	font-family: 'Arial', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.textarea-input {
+	background-color: black;
+	color: white;
+	height: clamp(100px, 10vh, 500px);
+	font-size: clamp(2rem, 1.3vw + .5rem, 5rem);
+	/* text-align: center; */
+	width: 80%;
+	padding: 1rem;
+	border-radius: 20px;
+	margin-bottom: 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.textarea-input:focus {
+	outline: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.textarea-label {
+	margin-bottom: 1rem;
+	font-size: clamp(2rem, 1.3vw + .5rem, 5rem);
 }
 
-.App-link {
-  color: #61dafb;
+.ai-form {
+	width: 100%;
+	height: 50vh;
+	justify-content: center;
+	max-width: 500px;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.submit-btn {
+	height: 3rem;
+	width: 10rem;
+	padding-left: 3rem;
+	padding-right: 3rem;
+	font-size: 2rem;
+	background-color: black;
+	color: white;
+	border: 2px solid white;
+	margin-top: 2rem;
+	border-radius: 20px;
 }
+
+.submit-btn:hover {
+	background-color: #1a1a1a;
+}
+
+.slider {
+	width: 80%;
+}
+
+.range-label {
+	font-size: clamp(1.3rem, 1.3vw + .5rem, 5rem);
+}
+
+
+.results-table {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+
+thead {
+	width: 100%;
+}
+
+tr {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+
+}
+
+
+thead {
+	width: 100%;
+	border-bottom: 1px solid white;
+	margin-bottom: 2rem;
+	margin-top: 1rem;
+}
+
+th {
+	font-size: clamp(2rem, 1.3vw + .5rem, 5rem);
+	margin-bottom: 1rem;
+}
+
+.question-answer {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	justify-content: space-around;
+	margin-bottom: 1rem;
+	padding-bottom: 1rem;
+	font-size: clamp(1.3rem, 1.3vw + .5rem, 5rem);
+	border-bottom: 1px solid white;
+}
+
+.question {
+	width: 40%;
+	text-align: center;
+}
+
+.answer {
+	width: 40%;
+	text-align: center;
+}
+
