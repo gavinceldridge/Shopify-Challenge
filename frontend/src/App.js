@@ -8,7 +8,7 @@ import Responses from "./Responses";
 function App() {
 	const configuration = new Configuration({
 		organization: "org-pp0wWrYEeCmUJsgTrkk7ub6f",
-		apiKey: "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",
+		apiKey: "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",
 	});
 
 	const [input, setInput] = useState("");
