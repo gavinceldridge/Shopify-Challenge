@@ -10,8 +10,8 @@ export default function Responses({ questionsAndAnswers }) {
 				</tr>
 			</thead>
 			<tbody>
-				{questionsAndAnswers.map((questionAndAnswer) => (
-					<tr className="question-answer" key={questionAndAnswer.question}>
+				{questionsAndAnswers.map((questionAndAnswer, index) => (
+					<tr className="question-answer" key={index}>
 						<td className='question'>{questionAndAnswer.question}</td>
 						<td className='answer'>{questionAndAnswer.answer}</td>
 					</tr>

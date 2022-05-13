@@ -25,7 +25,7 @@ function App() {
 		try {
 			const response = await openai.createCompletion("text-curie-001", {
 				prompt: input,
-				max_tokens: length,
+				max_tokens: parseInt(length),
 			});
 			console.log(response.data);
 			return response.data.choices;
