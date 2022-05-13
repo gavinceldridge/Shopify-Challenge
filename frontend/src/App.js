@@ -14,6 +14,7 @@ function App() {
 	});
 
 	const [input, setInput] = useState("");
+  const [loading, setLoading] = useState(false);
 	const [questionsAndAnswers, setQuestionsAndAnswers] = useLocalStorage("previousEntries", []);
 
 	const askAi = async (length) => {
@@ -37,9 +38,11 @@ function App() {
 
 	const handleSubmit = async (e, length) => {
 		e.preventDefault();
+    setLoading(true);
 		const res = await askAi(length);
+    setLoading(false);
 		if (res) {
-			console.log(res);
+      console.log(res);
 			setQuestionsAndAnswers([
 				{ question: input, answer: res[0].text },
 				...questionsAndAnswers,
@@ -54,7 +57,7 @@ function App() {
 				setInput={setInput}
 				handleSubmit={handleSubmit}
 			/>
-			<Responses questionsAndAnswers={questionsAndAnswers} setQuestionsAndAnswers={setQuestionsAndAnswers} />
+			<Responses questionsAndAnswers={questionsAndAnswers} setQuestionsAndAnswers={setQuestionsAndAnswers} loading={loading} />
 		</div>
 	);
 }
