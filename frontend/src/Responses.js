@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 
+import Response from "./Response";
+
 export default function Responses({
 	questionsAndAnswers,
 	setQuestionsAndAnswers,
@@ -33,26 +35,13 @@ export default function Responses({
 				)}
 
 				{questionsAndAnswers.map((questionAndAnswer, index) => (
-					<tr className="question-answer" key={index}>
-						<td className="delete">
-							<button
-								className="delete-btn"
-								onClick={() => {
-									setQuestionsAndAnswers(
-										questionsAndAnswers.filter(
-											(item, i) => i !== index
-										)
-									);
-								}}
-							>
-								X
-							</button>
-						</td>
-						<td className="question">
-							{questionAndAnswer.question}
-						</td>
-						<td className="answer">{questionAndAnswer.answer}</td>
-					</tr>
+					<Response
+						key={index}
+						questionAndAnswer={questionAndAnswer}
+						setQuestionsAndAnswers={setQuestionsAndAnswers}
+						index={index}
+						questionsAndAnswers={questionsAndAnswers}
+					/>
 				))}
 			</tbody>
 		</table>
