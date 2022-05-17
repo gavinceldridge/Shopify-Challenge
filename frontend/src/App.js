@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Configuration, OpenAIApi } from "openai";
 
 import useLocalStorage from "./useLocalStorage";
